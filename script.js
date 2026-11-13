@@ -5,9 +5,10 @@
    ===================================================================== */
 'use strict';
 
-/* ---------- CONFIGURACIÓN (único lugar donde vive el número) ---------- */
-// WhatsApp en formato internacional: 52 + 10 dígitos. Si queda vacío (''), los botones y el envío de WhatsApp se ocultan.
-const WHATSAPP_NUMERO = '524491808922';
+/* ---------- CONFIGURACIÓN (único lugar donde viven los números de WhatsApp) ---------- */
+// WhatsApp en formato internacional: 52 + 10 dígitos. Cada botón de WhatsApp abre un selector con estos números.
+// Si la lista queda vacía ([]), los botones y el envío de WhatsApp se ocultan.
+const WHATSAPP_NUMEROS = ['524491808922', '524494135970', '524495810340', '524494874775'];
 // false = oculta la sección, el aviso y los enlaces del Buen Fin cuando termine la campaña.
 const PROMO_BUEN_FIN = true;
 const NEGOCIO = 'Nexusphere AGS';
@@ -24,14 +25,60 @@ const NEGOCIO = 'Nexusphere AGS';
   const isMobile = window.matchMedia('(max-width: 759px)').matches;
 
   /* ================= WhatsApp y promoción ================= */
-  const waUrl = (texto) => 'https://wa.me/' + WHATSAPP_NUMERO + '?text=' + encodeURIComponent(texto);
-  if (!WHATSAPP_NUMERO) {
+  const waUrl = (texto, numero) => 'https://wa.me/' + numero + '?text=' + encodeURIComponent(texto);
+  const waFormat = (numero) => numero.slice(-10).replace(/(\d{3})(\d{3})(\d{4})/, '$1 $2 $3');
+
+  /* Selector de WhatsApp: con varios números, cada botón abre una ventana para elegir a cuál escribir. */
+  const wapick = $('#wapick');
+  const wapickList = $('#wapick-list');
+  let wapickTexto = '';
+  let wapickAlElegir = null;
+  const wapickSoportado = !!(wapick && typeof wapick.showModal === 'function');
+  function waAbrirSelector(texto, alElegir) {
+    wapickTexto = texto;
+    wapickAlElegir = alElegir || null;
+    if (!wapickSoportado || WHATSAPP_NUMEROS.length === 1) {
+      // Navegador sin <dialog> o un solo número: abre WhatsApp directo con el primer número.
+      window.open(waUrl(texto, WHATSAPP_NUMEROS[0]), '_blank', 'noopener');
+      if (alElegir) alElegir();
+      return;
+    }
+    $$('a', wapickList).forEach((a, i) => { a.href = waUrl(wapickTexto, WHATSAPP_NUMEROS[i]); });
+    wapick.showModal();
+    root.classList.add('modal-open');
+    const first = $('a', wapickList);
+    if (first) first.focus();
+  }
+  function waCerrarSelector() {
+    if (wapickSoportado && wapick.open) wapick.close();
+  }
+  if (!WHATSAPP_NUMEROS.length) {
     root.classList.add('no-wa');
   } else {
+    if (wapickList) {
+      wapickList.innerHTML = WHATSAPP_NUMEROS.map((n) =>
+        '<li><a class="wapick__num" href="#" target="_blank" rel="noopener">' +
+        '<span class="wapick__ic"><svg class="ic ic--fill" aria-hidden="true"><use href="#i-wa"/></svg></span>' +
+        '<span class="wapick__n">' + waFormat(n) + '</span>' +
+        '<span class="wapick__go">Escribir<svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg></span></a></li>'
+      ).join('');
+      wapickList.addEventListener('click', (e) => {
+        if (!e.target.closest('a')) return;
+        const cb = wapickAlElegir;
+        waCerrarSelector();
+        if (cb) cb();
+      });
+    }
+    if (wapickSoportado) {
+      $('#wapick-close').addEventListener('click', waCerrarSelector);
+      wapick.addEventListener('click', (e) => { if (e.target === wapick) waCerrarSelector(); }); // clic en el fondo
+      wapick.addEventListener('close', () => root.classList.remove('modal-open'));
+    }
     $$('[data-wa]').forEach((a) => {
-      a.href = waUrl(a.dataset.waText || 'Hola ' + NEGOCIO + ', quiero más información.');
-      a.target = '_blank';
-      a.rel = 'noopener';
+      a.addEventListener('click', (e) => {
+        e.preventDefault();
+        waAbrirSelector(a.dataset.waText || 'Hola ' + NEGOCIO + ', quiero más información.');
+      });
     });
   }
   if (!PROMO_BUEN_FIN) root.classList.add('promo-off');
@@ -529,16 +576,111 @@ const NEGOCIO = 'Nexusphere AGS';
     });
   });
 
+  /* ================= Galería: filtros, "Ver más" y visor de fotos ================= */
+  const galGrid = $('#gal-grid');
+  if (galGrid) {
+    const PAGE = 12; // fotos que se muestran cada vez, para que la galería no se sature
+    const items = $$('.gal__item', galGrid);
+    const chips = $$('.gal__chip');
+    const moreBtn = $('#gal-more');
+    const countEl = $('#gal-count');
+    let filter = 'todo';
+    let shown = PAGE;
+    let matches = items;
+    root.classList.add('gal-on'); // muestra filtros y botón (sin JS se ven todas las fotos)
+
+    function galRender(animateFrom) {
+      matches = items.filter((it) => filter === 'todo' || it.dataset.cat === filter);
+      items.forEach((it) => { it.hidden = true; });
+      matches.forEach((it, i) => {
+        if (i >= shown) return;
+        it.hidden = false;
+        it.classList.toggle('is-new', animateFrom != null && i >= animateFrom);
+      });
+      const vis = Math.min(shown, matches.length);
+      countEl.textContent = 'Mostrando ' + vis + ' de ' + matches.length + (matches.length === 1 ? ' foto' : ' fotos');
+      moreBtn.hidden = vis >= matches.length;
+      if (!moreBtn.hidden) {
+        const left = matches.length - vis;
+        $('span', moreBtn).textContent = 'Ver ' + Math.min(PAGE, left) + ' fotos más (' + left + ' restantes)';
+      }
+    }
+    chips.forEach((chip) => chip.addEventListener('click', () => {
+      filter = chip.dataset.filter;
+      shown = PAGE;
+      chips.forEach((c) => {
+        const on = c === chip;
+        c.classList.toggle('is-on', on);
+        c.setAttribute('aria-pressed', String(on));
+      });
+      galRender();
+    }));
+    moreBtn.addEventListener('click', () => {
+      const from = shown;
+      shown += PAGE;
+      galRender(from);
+    });
+    galRender();
+
+    /* Visor */
+    const lb = $('#lb');
+    const lbImg = $('#lb-img');
+    const lbCap = $('#lb-cap');
+    const lbOk = !!(lb && typeof lb.showModal === 'function');
+    let lbIdx = 0;
+    function lbShow(i) {
+      lbIdx = (i + matches.length) % matches.length;
+      const img = $('img', matches[lbIdx]);
+      lbImg.src = img.dataset.full;
+      lbImg.alt = img.alt;
+      lbCap.textContent = (lbIdx + 1) + ' / ' + matches.length + ' · ' + img.alt;
+      // Precarga la siguiente y la anterior para que el cambio sea inmediato
+      [1, -1].forEach((d) => {
+        const n = $('img', matches[(lbIdx + d + matches.length) % matches.length]);
+        if (n) new Image().src = n.dataset.full;
+      });
+    }
+    if (lbOk) {
+      galGrid.addEventListener('click', (e) => {
+        const btn = e.target.closest('.gal__btn');
+        if (!btn) return;
+        const li = btn.closest('.gal__item');
+        lbShow(matches.indexOf(li));
+        lb.showModal();
+        root.classList.add('modal-open');
+        $('#lb-close').focus();
+      });
+      $('#lb-close').addEventListener('click', () => lb.close());
+      $('#lb-prev').addEventListener('click', () => lbShow(lbIdx - 1));
+      $('#lb-next').addEventListener('click', () => lbShow(lbIdx + 1));
+      lb.addEventListener('click', (e) => { if (e.target === lb) lb.close(); }); // clic en el fondo
+      lb.addEventListener('close', () => { root.classList.remove('modal-open'); lbImg.removeAttribute('src'); });
+      lb.addEventListener('keydown', (e) => {
+        if (e.key === 'ArrowLeft') lbShow(lbIdx - 1);
+        else if (e.key === 'ArrowRight') lbShow(lbIdx + 1);
+      });
+      // Deslizar con el dedo en el celular
+      let sx = null;
+      lb.addEventListener('touchstart', (e) => { sx = e.changedTouches[0].clientX; }, { passive: true });
+      lb.addEventListener('touchend', (e) => {
+        if (sx === null) return;
+        const dx = e.changedTouches[0].clientX - sx;
+        sx = null;
+        if (Math.abs(dx) > 50) lbShow(lbIdx + (dx < 0 ? 1 : -1));
+      }, { passive: true });
+    }
+  }
+
   /* ================= Formulario de contacto → WhatsApp ================= */
   const form = $('#form-contacto');
   const note = $('#form-note');
   if (form && note) {
-    if (!WHATSAPP_NUMERO) {
+    if (!WHATSAPP_NUMEROS.length) {
       note.textContent = 'Por ahora puedes contactarnos por teléfono, correo o visitándonos en la tienda.';
     }
     form.addEventListener('submit', (e) => {
       e.preventDefault();
-      if (!WHATSAPP_NUMERO) return;
+      if (!WHATSAPP_NUMEROS.length) return;
       const nombreEl = form.elements.nombre;
       const nombre = (nombreEl.value || '').trim();
       if (!nombre) {
@@ -553,10 +695,10 @@ const NEGOCIO = 'Nexusphere AGS';
       const interes = form.elements.interes.value;
       const msg = (form.elements.mensaje.value || '').trim();
       const texto = 'Hola ' + NEGOCIO + ', soy ' + nombre + '. Me interesa: ' + interes + '.' + (msg ? ' ' + msg : '') + ' (Mensaje enviado desde su página web)';
-      const url = waUrl(texto);
-      const win = window.open(url, '_blank', 'noopener');
-      if (!win) window.location.href = url;
-      note.textContent = '¡Listo! Se abrió WhatsApp con tu mensaje. Si no ves la ventana, revisa que tu navegador no la haya bloqueado.';
+      note.textContent = 'Elige a qué número quieres escribir y se abrirá WhatsApp con tu mensaje.';
+      waAbrirSelector(texto, () => {
+        note.textContent = '¡Listo! Se abrió WhatsApp con tu mensaje. Si no ves la ventana, revisa que tu navegador no la haya bloqueado.';
+      });
     });
     form.elements.nombre.addEventListener('input', () => {
       form.elements.nombre.removeAttribute('aria-invalid');

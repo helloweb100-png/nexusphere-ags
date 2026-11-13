@@ -5,3 +5,7 @@ node_modules
 *.log
 Thumbs.db
 .DS_Store
+
+# Originales del cliente (fotos sin optimizar y notas de voz): no se publican
+WhatsApp Unknown*
+WhatsApp Ptt*

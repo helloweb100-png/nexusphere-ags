@@ -112,6 +112,7 @@
       </a>
       <nav class="nav" aria-label="Principal">
         <a href="#tecnologia">Tecnología</a>
+        <a href="#galeria">Galería</a>
         <a href="#buen-fin" data-promo>Buen Fin</a>
         <a href="#marca">Marca</a>
         <a href="#ventajas">Ventajas</a>
@@ -131,11 +132,12 @@
   <div class="menu" id="menu" aria-hidden="true">
     <nav class="menu__nav" aria-label="Menú móvil">
       <a href="#tecnologia"><small>01</small>Tecnología</a>
-      <a href="#buen-fin" data-promo><small>02</small>Buen Fin</a>
-      <a href="#marca"><small>03</small>Marca</a>
-      <a href="#ventajas"><small>04</small>Ventajas</a>
-      <a href="#proceso"><small>05</small>Proceso</a>
-      <a href="#contacto"><small>06</small>Contacto</a>
+      <a href="#galeria"><small>02</small>Galería</a>
+      <a href="#buen-fin" data-promo><small>03</small>Buen Fin</a>
+      <a href="#marca"><small>04</small>Marca</a>
+      <a href="#ventajas"><small>05</small>Ventajas</a>
+      <a href="#proceso"><small>06</small>Proceso</a>
+      <a href="#contacto"><small>07</small>Contacto</a>
     </nav>
     <a class="btn btn--gold btn--lg" href="#contacto" data-wa data-wa-text="Hola Nexusphere AGS, quiero más información sobre sus equipos.">
       <svg class="ic ic--fill" aria-hidden="true"><use href="#i-wa"/></svg>
@@ -304,6 +306,144 @@
               <figcaption class="hud"><i></i>Accesorios</figcaption>
             </figure>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ GALERÍA ============ -->
+    <section class="gal section" id="galeria" aria-labelledby="gal-title">
+      <div class="wrap">
+        <header class="section__head">
+          <p class="kicker rv">Galería</p>
+          <h2 class="h2 rv" id="gal-title">Nuestro local, <em>tu próximo equipo</em>.</h2>
+          <p class="lead rv">Fotos reales de Nexusphere AGS en Aguascalientes: smartphones, tablets y accesorios. Filtra por categoría y toca una foto para verla en grande.</p>
+        </header>
+
+        <div class="gal__filters" role="group" aria-label="Filtrar fotos por categoría">
+          <button type="button" class="gal__chip is-on" data-filter="todo" aria-pressed="true">Todo <small>100</small></button>
+          <button type="button" class="gal__chip" data-filter="iphone" aria-pressed="false">iPhone <small>71</small></button>
+          <button type="button" class="gal__chip" data-filter="samsung" aria-pressed="false">Samsung <small>5</small></button>
+          <button type="button" class="gal__chip" data-filter="tablets" aria-pressed="false">Tablets <small>17</small></button>
+          <button type="button" class="gal__chip" data-filter="accesorios" aria-pressed="false">Accesorios <small>7</small></button>
+        </div>
+
+        <ul class="gal__grid" id="gal-grid">
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g013-t.webp" data-full="assets/galeria/g013.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g022-t.webp" data-full="assets/galeria/g022.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g001-t.webp" data-full="assets/galeria/g001.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g026-t.webp" data-full="assets/galeria/g026.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g027-t.webp" data-full="assets/galeria/g027.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g028-t.webp" data-full="assets/galeria/g028.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="accesorios"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS"><img src="assets/galeria/g008-t.webp" data-full="assets/galeria/g008.webp" alt="Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g029-t.webp" data-full="assets/galeria/g029.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g002-t.webp" data-full="assets/galeria/g002.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g031-t.webp" data-full="assets/galeria/g031.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="samsung"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Samsung Galaxy en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g045-t.webp" data-full="assets/galeria/g045.webp" alt="Samsung Galaxy en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g032-t.webp" data-full="assets/galeria/g032.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g033-t.webp" data-full="assets/galeria/g033.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g034-t.webp" data-full="assets/galeria/g034.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g003-t.webp" data-full="assets/galeria/g003.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g035-t.webp" data-full="assets/galeria/g035.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g036-t.webp" data-full="assets/galeria/g036.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g037-t.webp" data-full="assets/galeria/g037.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g038-t.webp" data-full="assets/galeria/g038.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g039-t.webp" data-full="assets/galeria/g039.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g004-t.webp" data-full="assets/galeria/g004.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="360" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="accesorios"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS"><img src="assets/galeria/g011-t.webp" data-full="assets/galeria/g011.webp" alt="Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g040-t.webp" data-full="assets/galeria/g040.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g041-t.webp" data-full="assets/galeria/g041.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g042-t.webp" data-full="assets/galeria/g042.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g043-t.webp" data-full="assets/galeria/g043.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g005-t.webp" data-full="assets/galeria/g005.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g044-t.webp" data-full="assets/galeria/g044.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g046-t.webp" data-full="assets/galeria/g046.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="samsung"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Samsung Galaxy en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g047-t.webp" data-full="assets/galeria/g047.webp" alt="Samsung Galaxy en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g050-t.webp" data-full="assets/galeria/g050.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g052-t.webp" data-full="assets/galeria/g052.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g006-t.webp" data-full="assets/galeria/g006.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g053-t.webp" data-full="assets/galeria/g053.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g054-t.webp" data-full="assets/galeria/g054.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="accesorios"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS"><img src="assets/galeria/g014-t.webp" data-full="assets/galeria/g014.webp" alt="Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g055-t.webp" data-full="assets/galeria/g055.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g056-t.webp" data-full="assets/galeria/g056.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g007-t.webp" data-full="assets/galeria/g007.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="360" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g057-t.webp" data-full="assets/galeria/g057.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g058-t.webp" data-full="assets/galeria/g058.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g059-t.webp" data-full="assets/galeria/g059.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g060-t.webp" data-full="assets/galeria/g060.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g009-t.webp" data-full="assets/galeria/g009.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="360" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g061-t.webp" data-full="assets/galeria/g061.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g062-t.webp" data-full="assets/galeria/g062.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g063-t.webp" data-full="assets/galeria/g063.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g064-t.webp" data-full="assets/galeria/g064.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g010-t.webp" data-full="assets/galeria/g010.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="accesorios"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS"><img src="assets/galeria/g017-t.webp" data-full="assets/galeria/g017.webp" alt="Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="samsung"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Samsung Galaxy en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g048-t.webp" data-full="assets/galeria/g048.webp" alt="Samsung Galaxy en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g065-t.webp" data-full="assets/galeria/g065.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g066-t.webp" data-full="assets/galeria/g066.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g067-t.webp" data-full="assets/galeria/g067.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g068-t.webp" data-full="assets/galeria/g068.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g069-t.webp" data-full="assets/galeria/g069.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g012-t.webp" data-full="assets/galeria/g012.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g070-t.webp" data-full="assets/galeria/g070.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g071-t.webp" data-full="assets/galeria/g071.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g072-t.webp" data-full="assets/galeria/g072.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g073-t.webp" data-full="assets/galeria/g073.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g015-t.webp" data-full="assets/galeria/g015.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g074-t.webp" data-full="assets/galeria/g074.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g075-t.webp" data-full="assets/galeria/g075.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="accesorios"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS"><img src="assets/galeria/g018-t.webp" data-full="assets/galeria/g018.webp" alt="Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g076-t.webp" data-full="assets/galeria/g076.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g077-t.webp" data-full="assets/galeria/g077.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g016-t.webp" data-full="assets/galeria/g016.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g078-t.webp" data-full="assets/galeria/g078.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g079-t.webp" data-full="assets/galeria/g079.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="samsung"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Samsung Galaxy en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g049-t.webp" data-full="assets/galeria/g049.webp" alt="Samsung Galaxy en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g080-t.webp" data-full="assets/galeria/g080.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g081-t.webp" data-full="assets/galeria/g081.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g020-t.webp" data-full="assets/galeria/g020.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g082-t.webp" data-full="assets/galeria/g082.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g083-t.webp" data-full="assets/galeria/g083.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g084-t.webp" data-full="assets/galeria/g084.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g085-t.webp" data-full="assets/galeria/g085.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="accesorios"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS"><img src="assets/galeria/g019-t.webp" data-full="assets/galeria/g019.webp" alt="Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g021-t.webp" data-full="assets/galeria/g021.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g086-t.webp" data-full="assets/galeria/g086.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g087-t.webp" data-full="assets/galeria/g087.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g088-t.webp" data-full="assets/galeria/g088.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g089-t.webp" data-full="assets/galeria/g089.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g090-t.webp" data-full="assets/galeria/g090.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g023-t.webp" data-full="assets/galeria/g023.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g091-t.webp" data-full="assets/galeria/g091.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g092-t.webp" data-full="assets/galeria/g092.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g093-t.webp" data-full="assets/galeria/g093.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="samsung"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Samsung Galaxy en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g051-t.webp" data-full="assets/galeria/g051.webp" alt="Samsung Galaxy en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g094-t.webp" data-full="assets/galeria/g094.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g024-t.webp" data-full="assets/galeria/g024.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g095-t.webp" data-full="assets/galeria/g095.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="accesorios"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS"><img src="assets/galeria/g025-t.webp" data-full="assets/galeria/g025.webp" alt="Accesorios para tablet (teclado y fundas) en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g096-t.webp" data-full="assets/galeria/g096.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g097-t.webp" data-full="assets/galeria/g097.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g098-t.webp" data-full="assets/galeria/g098.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="tablets"><button type="button" class="gal__btn" aria-label="Ver foto en grande: Tablet en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g030-t.webp" data-full="assets/galeria/g030.webp" alt="Tablet en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g099-t.webp" data-full="assets/galeria/g099.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+          <li class="gal__item" data-cat="iphone"><button type="button" class="gal__btn" aria-label="Ver foto en grande: iPhone en exhibición en la tienda Nexusphere AGS"><img src="assets/galeria/g100-t.webp" data-full="assets/galeria/g100.webp" alt="iPhone en exhibición en la tienda Nexusphere AGS" width="480" height="640" loading="lazy" decoding="async"></button></li>
+        </ul>
+
+        <div class="gal__more">
+          <p class="gal__count" id="gal-count" role="status"></p>
+          <button type="button" class="btn btn--night" id="gal-more">
+            <span>Ver más fotos</span>
+            <svg class="ic" aria-hidden="true"><use href="#i-arrow"/></svg>
+          </button>
+        </div>
+
+        <div class="gal__cta">
+          <p>¿Te gustó algún equipo? Cuéntanos cuál y te damos información.</p>
+          <a class="btn btn--gold btn--lg" href="#contacto" data-wa data-wa-text="Hola Nexusphere AGS, vi su galería de fotos y me gustó un equipo. ¿Me pueden dar información?">
+            <svg class="ic ic--fill" aria-hidden="true"><use href="#i-wa"/></svg>
+            <span>Preguntar por WhatsApp</span>
+          </a>
         </div>
       </div>
     </section>
@@ -548,6 +688,7 @@
               <li><a href="tel:+524491808922"><svg class="ic" aria-hidden="true"><use href="#i-call"/></svg><span>449 180 8922</span></a></li>
               <li><a href="tel:+524494135970"><svg class="ic" aria-hidden="true"><use href="#i-call"/></svg><span>449 413 5970</span></a></li>
               <li><a href="tel:+524495810340"><svg class="ic" aria-hidden="true"><use href="#i-call"/></svg><span>449 581 0340</span></a></li>
+              <li><a href="tel:+524494874775"><svg class="ic" aria-hidden="true"><use href="#i-call"/></svg><span>449 487 4775</span></a></li>
             </ul>
 
             <ul class="social rv" aria-label="Redes sociales">
@@ -619,6 +760,7 @@
       <nav class="footer__nav" aria-label="Pie de página">
         <b>Explora</b>
         <a href="#tecnologia">Tecnología</a>
+        <a href="#galeria">Galería</a>
         <a href="#buen-fin" data-promo>Buen Fin</a>
         <a href="#marca">Marca</a>
         <a href="#ventajas">Ventajas</a>
@@ -630,6 +772,7 @@
         <a href="tel:+524491808922">449 180 8922</a>
         <a href="tel:+524494135970">449 413 5970</a>
         <a href="tel:+524495810340">449 581 0340</a>
+        <a href="tel:+524494874775">449 487 4775</a>
         <a href="mailto:nexusphereags@gmail.com">nexusphereags@gmail.com</a>
       </div>
       <div class="footer__social">
@@ -649,6 +792,36 @@
     <svg class="ic ic--fill" aria-hidden="true"><use href="#i-wa"/></svg>
     <span class="wa-float__tip">¿Hablamos?</span>
   </a>
+
+  <!-- Selector de WhatsApp: todos los botones de WhatsApp abren esta ventana con los 4 números (se llena desde script.js) -->
+  <dialog class="wapick" id="wapick" aria-labelledby="wapick-title">
+    <div class="wapick__box">
+      <button class="wapick__x" type="button" id="wapick-close" aria-label="Cerrar">
+        <svg class="ic" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+      </button>
+      <p class="kicker">WhatsApp</p>
+      <h2 class="wapick__title" id="wapick-title">¿Con qué número quieres hablar?</h2>
+      <p class="wapick__lead">Elige uno de nuestros 4 números y se abrirá WhatsApp con tu mensaje ya escrito.</p>
+      <ul class="wapick__list" id="wapick-list"></ul>
+    </div>
+  </dialog>
+
+  <!-- Visor de fotos de la galería -->
+  <dialog class="lb" id="lb" aria-label="Foto ampliada de la galería">
+    <button class="lb__btn lb__close" type="button" id="lb-close" aria-label="Cerrar foto">
+      <svg class="ic" aria-hidden="true" viewBox="0 0 24 24"><path d="M6 6l12 12M18 6 6 18"/></svg>
+    </button>
+    <button class="lb__btn lb__prev" type="button" id="lb-prev" aria-label="Foto anterior">
+      <svg class="ic" aria-hidden="true" viewBox="0 0 24 24"><path d="M15 5l-7 7 7 7"/></svg>
+    </button>
+    <figure class="lb__fig">
+      <img id="lb-img" src="" alt="">
+      <figcaption id="lb-cap" class="lb__cap"></figcaption>
+    </figure>
+    <button class="lb__btn lb__next" type="button" id="lb-next" aria-label="Foto siguiente">
+      <svg class="ic" aria-hidden="true" viewBox="0 0 24 24"><path d="M9 5l7 7-7 7"/></svg>
+    </button>
+  </dialog>
 
   <script src="script.js" defer></script>
 </body>

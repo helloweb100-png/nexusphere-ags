@@ -7,3 +7,7 @@ Thumbs.db
 .DS_Store
 *.log
 .cache/
+
+# Originales del cliente (fotos sin optimizar y notas de voz): no se publican
+WhatsApp Unknown*/
+WhatsApp Ptt*

@@ -464,6 +464,81 @@ button { cursor: pointer; }
 @keyframes waPing { from { transform: scale(1); opacity: .7; } to { transform: scale(1.6); opacity: 0; } }
 @keyframes waIn { to { opacity: 1; } }
 
+/* ---------- Galería de fotos ---------- */
+html.modal-open { overflow: hidden; }
+.gal { background: var(--paper); }
+.gal__filters, .gal__more { display: none; } /* los activa script.js (clase gal-on); sin JS se ven todas las fotos */
+.gal-on .gal__filters { display: flex; }
+.gal-on .gal__more { display: grid; }
+.gal__filters { flex-wrap: wrap; gap: 8px; margin-bottom: clamp(20px, 4vw, 32px); }
+.gal__chip { display: inline-flex; align-items: center; gap: .55em; padding: .7em 1.15em; border-radius: 999px; border: 1px solid var(--line); background: var(--ivory); color: var(--ink); font: 700 .86rem/1 var(--font-display); transition: background .3s, color .3s, border-color .3s, transform .3s var(--ease); }
+.gal__chip small { font: 700 .72rem/1 var(--font-display); color: var(--gold-4); font-variant-numeric: tabular-nums; transition: color .3s; }
+.gal__chip:hover { border-color: var(--gold); transform: translateY(-2px); }
+.gal__chip.is-on { background: var(--ink); border-color: var(--ink); color: #fff; }
+.gal__chip.is-on small { color: var(--gold-3); }
+.gal__grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+.gal__item[hidden] { display: none; }
+.gal__item.is-new { animation: galIn .7s var(--ease) both; }
+.gal__btn { position: relative; display: block; width: 100%; aspect-ratio: 3 / 4; padding: 0; overflow: hidden; border: 1px solid var(--line); border-radius: 18px; background: var(--paper-2); cursor: zoom-in; box-shadow: 0 14px 30px -22px rgba(11, 22, 51, .55); transition: transform .45s var(--ease), box-shadow .45s var(--ease), border-color .3s; }
+.gal__btn img { width: 100%; height: 100%; object-fit: cover; transition: transform .9s var(--ease); }
+.gal__btn::after { content: "+"; position: absolute; right: 10px; bottom: 10px; display: grid; place-items: center; width: 34px; height: 34px; border-radius: 50%; background: rgba(7, 16, 39, .66); border: 1px solid rgba(243, 220, 154, .5); color: var(--gold-3); font: 600 1.15rem/1 var(--font-display); opacity: 0; transform: scale(.8); transition: opacity .3s, transform .35s var(--ease); }
+.gal__btn:hover { transform: translateY(-4px); border-color: var(--gold); box-shadow: 0 22px 36px -22px rgba(138, 100, 32, .65); }
+.gal__btn:hover img { transform: scale(1.05); }
+.gal__btn:hover::after, .gal__btn:focus-visible::after { opacity: 1; transform: none; }
+.gal__more { justify-items: center; gap: 14px; margin-top: clamp(26px, 4vw, 40px); }
+.gal__more[hidden], .gal__more .btn[hidden] { display: none; }
+.gal__count { font: 600 .84rem var(--font-display); color: var(--ink-3); }
+.gal__cta { display: grid; justify-items: center; gap: 16px; margin-top: clamp(40px, 6vw, 72px); padding: clamp(26px, 5vw, 44px) 20px; text-align: center; border-radius: 26px; background: var(--ivory); border: 1px solid var(--line); }
+.gal__cta p { font: 600 clamp(1.05rem, 2.6vw, 1.3rem)/1.3 var(--font-display); color: var(--ink); letter-spacing: -.01em; text-wrap: balance; }
+@keyframes galIn { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+@media (min-width: 640px) { .gal__grid { grid-template-columns: repeat(3, 1fr); gap: 14px; } }
+@media (min-width: 960px) { .gal__grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } }
+
+/* Cabecera: con el enlace «Galería» el menú es más largo; en escritorios angostos se compacta para que nada se parta en 2 líneas */
+.nav a, .site-header .header-cta { white-space: nowrap; }
+@media (min-width: 1040px) and (max-width: 1179px) {
+  .nav a { padding-inline: .5em; font-size: .8rem; }
+}
+
+/* ---------- Selector de WhatsApp (4 números) ---------- */
+.wapick { width: min(92vw, 440px); max-width: none; max-height: 92svh; margin: auto; padding: 0; border: 1px solid var(--line); border-radius: 26px; background: var(--ivory); color: var(--ink-2); overflow: auto; box-shadow: 0 40px 80px -30px rgba(7, 16, 39, .7); }
+.wapick[open] { animation: wapickIn .45s var(--ease) both; }
+.wapick::backdrop { background: rgba(7, 16, 39, .62); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); }
+.wapick__box { position: relative; display: grid; gap: 12px; padding: clamp(26px, 5vw, 36px) clamp(20px, 5vw, 32px) clamp(22px, 4vw, 30px); }
+.wapick__x { position: absolute; top: 12px; right: 12px; display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: rgba(255, 255, 255, .7); color: var(--ink); }
+.wapick__x:hover { background: var(--paper-2); }
+.wapick__title { font: 700 clamp(1.35rem, 5vw, 1.7rem)/1.15 var(--font-display); letter-spacing: -.02em; color: var(--ink); padding-right: 34px; text-wrap: balance; }
+.wapick__lead { font-size: .96rem; color: var(--ink-2); }
+.wapick__list { display: grid; gap: 10px; margin-top: 6px; }
+.wapick__num { display: flex; align-items: center; gap: 14px; padding: .8em 1em; border-radius: 18px; border: 1px solid var(--line); background: #fff; color: var(--ink); transition: translate .35s var(--ease), border-color .3s, box-shadow .3s, background .3s; }
+.wapick__num:hover { translate: 0 -3px; border-color: #25D366; box-shadow: 0 16px 28px -18px rgba(18, 140, 78, .75); }
+.wapick__ic { display: grid; place-items: center; flex: none; width: 42px; height: 42px; border-radius: 50%; background: #25D366; color: #fff; }
+.wapick__ic .ic { width: 22px; height: 22px; }
+.wapick__n { flex: 1; font: 700 1.12rem var(--font-display); letter-spacing: .01em; font-variant-numeric: tabular-nums; }
+.wapick__go { display: inline-flex; align-items: center; gap: .4em; font: 700 .8rem var(--font-display); color: #128C4E; }
+.wapick__go .ic { width: 1.1em; height: 1.1em; }
+@keyframes wapickIn { from { opacity: 0; transform: translateY(18px) scale(.97); } to { opacity: 1; transform: none; } }
+
+/* ---------- Visor de fotos ---------- */
+.lb { width: 100%; height: 100%; max-width: none; max-height: none; margin: 0; padding: 0; border: 0; background: rgba(7, 16, 39, .95); color: #fff; overflow: hidden; }
+.lb[open] { display: flex; align-items: center; justify-content: center; gap: 8px; animation: lbIn .35s ease both; }
+.lb::backdrop { background: rgba(7, 16, 39, .9); }
+.lb__fig { flex: 1; min-width: 0; display: grid; justify-items: center; gap: 12px; padding: 64px 0 22px; }
+.lb__fig img { width: auto; height: auto; max-width: 100%; max-height: calc(100svh - 150px); object-fit: contain; border-radius: 14px; box-shadow: 0 30px 70px -20px rgba(0, 0, 0, .7); }
+.lb__cap { max-width: 56ch; padding: 0 16px; text-align: center; font: 600 .84rem/1.4 var(--font-display); color: var(--gold-3); }
+.lb__btn { position: absolute; z-index: 2; display: grid; place-items: center; width: 48px; height: 48px; border-radius: 50%; border: 1px solid rgba(243, 220, 154, .45); background: rgba(7, 16, 39, .6); color: #fff; transition: background .3s, border-color .3s; }
+.lb__btn:hover { background: rgba(243, 220, 154, .2); border-color: var(--gold-3); }
+.lb__close { top: 14px; right: 14px; }
+.lb__prev { left: 10px; top: 50%; margin-top: -24px; }
+.lb__next { right: 10px; top: 50%; margin-top: -24px; }
+.lb .ic { width: 22px; height: 22px; }
+@keyframes lbIn { from { opacity: 0; } to { opacity: 1; } }
+@media (min-width: 760px) {
+  .lb__prev { left: 28px; }
+  .lb__next { right: 28px; }
+  .lb__close { top: 22px; right: 28px; }
+}
+
 /* ---------- Tablet / escritorio ---------- */
 @media (min-width: 520px) {
   .site-header .header-cta { display: inline-flex; }
@@ -512,9 +587,12 @@ button { cursor: pointer; }
 @media (max-width: 519px) {
   .eyebrow { font-size: .66rem; letter-spacing: .05em; padding-right: .8em; }
 }
-/* Teléfonos: cuando caben en 2 columnas, el tercero ocupa el ancho completo (sin huérfano) */
-@media (max-width: 639px), (min-width: 900px) and (max-width: 1199px) {
-  .phones li:last-child { grid-column: 1 / -1; }
+/* Teléfonos (4 números): siempre en cuadrícula de 2×2 desde 640px; si en 2 columnas quedara uno suelto, ocupa el ancho completo */
+@media (min-width: 640px) {
+  .phones { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 639px) {
+  .phones li:last-child:nth-child(odd) { grid-column: 1 / -1; }
 }
 
 /* ---------- Movimiento reducido ---------- */
